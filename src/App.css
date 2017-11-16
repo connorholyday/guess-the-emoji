@@ -1,0 +1,161 @@
+root {
+  --difficulty: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.logo {
+  position: fixed;
+  top: .5rem;
+  left: .5rem;
+}
+
+.logo svg {
+  width: 90px;
+  height: 33px;
+}
+
+.logo g {
+  stroke: cornflowerblue;
+}
+
+.logo use {
+  fill: #13CEEF;
+}
+
+h1 {
+  font-family: system-ui, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  width: 248px;
+  margin: 0 auto;
+}
+
+.options .emoji:hover {
+  cursor: pointer;
+}
+
+.bg {
+  background-color: #353535;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -o-background-clip: text;
+  text-align: center;
+}
+
+.emoji {
+  font-size: 48px;
+  user-select: none;
+}
+
+.emoji--large {
+  font-size: 80px;
+}
+
+.bg--blurred {
+  -webkit-filter: blur(calc(var(--difficulty) * 1px));
+  filter: blur(calc(var(--difficulty) * 1px));
+}
+
+.bg--blurred .emoji {
+  color: transparent;
+}
+
+.is-hidden {
+  display: none;
+}
+
+.score {
+  color: white;
+  position: absolute;
+  bottom: .5rem;
+  left: .5rem;
+  text-align: left;
+}
+
+.score span {
+  display: block;
+  font-weight: 600;
+}
+
+.score span:first-child {
+  font-size: 14px;
+}
+
+.score span:last-child {
+  font-size: 16px;
+}
+
+.is-shake {
+  animation: shake .3s;
+}
+
+@-webkit-keyframes shake {
+  8%, 41% {
+    -webkit-transform: translateX(-10px);
+  }
+
+  25%, 58% {
+    -webkit-transform: translateX(10px);
+  }
+
+  75% {
+    -webkit-transform: translateX(-5px);
+  }
+
+  92% {
+    -webkit-transform: translateX(5px);
+  }
+
+  0%, 100% {
+    -webkit-transform: translateX(0);
+  }
+
+}
+
+@media (min-width: 768px) {
+  .logo {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  h1 {
+    font-size: 48px;
+    margin: 1em 0 0.8em;
+  }
+
+  .score {
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .score span:first-child {
+    font-size: 16px;
+  }
+
+  .score span:last-child {
+    font-size: 20px;
+  }
+}
